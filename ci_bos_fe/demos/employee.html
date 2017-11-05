@@ -6,9 +6,9 @@
 <script >
 $(document).ready(function(){
     $("button").click(function(){
-        $.getJSON("json_demo.json", function(result){
+        $.getJSON("https://httpbin.org/get", function(result){
             $.each(result, function(i, field){
-                $("div").append(field + " ");
+                $("div").append(i+" :  "+field + "<br/>");
             });
         });
     });
