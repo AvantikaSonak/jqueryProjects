@@ -18,7 +18,39 @@ $(document).ready(function(){
 <body>
 
 <button>Get JSON data</button>
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+	$(document).ready(function() {
 
+		$.getJSON("employee_verification_response.json", function(result) {
+
+			$.each(result, function(i, field) {
+
+				$("div").append(i + " :  " + field + "<br/>");
+			});
+
+		});
+
+	});
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-default"></nav>
+
+	<div class="container-fluid" style="height: 7em;">???????</div>
+
+</body>
+</html>
 <div></div>
 
 </body>
