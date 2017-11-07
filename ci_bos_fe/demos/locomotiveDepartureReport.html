@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/employeResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){
+    $("#submitButton").click(function(){
+    	var scac= $("#scacReq").val();
+    	var icd= $("#icd").val();
+    	var reason= $("#reason").val();
+    	var empId= $("#empIdReq").val();
+    	var empPin= $("#empPin").val();
+    	var postVar = JSON.stringify({scac:scac,icd:icd,reason:reason,empId:empId,empPin:empPin});
+        $.post("<URL>",postVar);  
+        alert('post'+postVar);
+    }
+    );    
+});
+</script>
+</head>
+<body>
+ <div class="container"> 
+	<div>
+		<br> <span class="category_title">Verify Employee Info Request 02000 </span> <br> <br>
+	</div>
+	
+	<div id="verify_request_content" class="jumbotron" id="requestDiv">
+		<!-- <div style="width: 25%; float: left; margin-left: 6%;">
+			<b> <span class="line_height">Railroad SCAC  :</span><br> <br>
+				<span class="line_height">ICD Version  :</span><br> <br>
+				<span class="line_height">Train ID :</span><br> <br>
+				<span class="line_height">Milepost  :</span><br> <br>
+				<span class="line_height">Milepost Prefix  :</span><br> <br>
+				<span class="line_height">Milepost Suffix  :</span><br> <br>		
+				<span class="line_height">Track name  :</span><br> <br>	
+				
+			    <span class="line_height">Current Position Railroad SCAC  :</span><br> <br>		
+				<span class="line_height">PTC Subdivision / District ID  :</span><br> <br>
+				<span class="line_height">Current Position Uncertainty  :</span><br> <br>	
+				<span class="line_height">Current Position  :</span><br> <br>	
+				<span class="line_height">Test Time Stamp :</span><br> <br>
+				<span class="line_height">Test Status :</span><br> <br>
+				<span class="line_height">Employee ID :</span><br> <br>		
+				<span class="line_height">Locomotive State Summary:</span><br> <br>
+				<span class="line_height">Onboard Software Version:</span><br> <br>														
+			</b>
+			</div>			
+				<input type="text" id="scacReq" size="25" placeholder=""><br> <br>
+				<input type="text" id="icd" size="25"><br> <br>
+				<input type="text" id="trainId" size="25"><br> <br>		
+				<input type="text" id="milepost" size="25"><br> <br>
+				<input id="milepostPrfx" size="25"><br> <br>				
+				<input id="milepostSfx" size="25"><br> <br>
+				<input id="trakNm" size="25"><br> <br>	
+				
+				<input id="currentPosScac" size="25"><br> <br>
+				<input id="ptcSubdiv" size="25"><br> <br>
+				<input id="currentPosUncty" size="25"><br> <br>				
+				<input id="currentPos" size="25"><br> <br>
+				<input id="testTmStmp" size="25"><br> <br>
+				<input id="testStaus" size="25"><br> <br>
+				<input id="empId" size="25"><br> <br>
+				<input id="locStateSummary" size="25"><br> <br>
+				<input id="onBoardSWVer" size="25"><br> <br> -->			
+		<table>
+		<tr>
+		<td>	
+		<span class="line_height">Railroad SCAC  :</span>	
+		</td>
+		<td>
+		<input type="text" id="scacReq" size="25">
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<span class="line_height">ICD Version  :</span>
+		</td>
+		<td>
+		<input type="text" id="icd" size="25">
+		</td>
+		</tr>
+		
+		</table>	
+			
+			 </div> 
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 3em"><b>Submit</b></button>
+		</div>
+			
+	</div> 
+		
+</body>
+</html>
