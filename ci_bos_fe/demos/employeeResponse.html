@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/employeResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+	$(document).ready(function() {		
+			verifyEmployeeResponse();		
+	});
+</script>
+</head>
+<body>
+	<div>
+		<br> <span class="category_title" style="margin-left: 1em">Verify Employee Info
+			Response 01000 </span> <br> <br>
+	</div>
+	<!-- <div id="verify_request_content" class="jumbotron"> -->
+		<div style="width: 27%; float: left; margin-left: 7%;">
+			<b> <span >Railroad SCAC : </span><br> <br>
+				<span >Verification Status :</span><br> <br>
+				<span >Reason Text :</span><br> <br>
+				<div id="empDtlFlds">
+					<span >Employee Identifier :</span><br> <br>
+					<span>Employee First Name :</span><br> <br>
+					<span>Employee Middle Initial :</span><br> <br>
+					<!-- <span class="line_height">Employee Last Name :</span><br> -->
+					<span>Employee Last Name :</span>
+					<br>
+				</div>
+			</b>
+		</div>
+		<!-- <input type="text" id="scac" size="25" placeholder=""> <br>
+		<br> <input type="text" id="status" size="25"><br> <br>
+		<input type="text" id="reasonText" size="25"><br> <br>
+		<div id="empDtlVal">
+			<input type="text" id="empId" size="25"><br> <br> <input
+				type="text" id="firstName" size="25"><br> <br> <input
+				type="text" id="midName" size="25"><br> <br> <input
+				type="text" id="lastName" size="25"><br> <br>
+		</div> -->
+		
+		<span id="scac"></span> <br><br>
+		<span id="status"> </span> <br> <br> 
+		<span id="reasonText"> </span><br> <br> 
+		<div id="empDtlVal">
+			<span id="empId"></span> <br> <br> 
+			<span id="firstName"> </span><br> <br>
+			<span id="midName"> </span> <br> <br> 
+			<span id="lastName"></span> <br> <br>
+		</div>
+		
+	<!-- </div> -->
+</body>
+</html>

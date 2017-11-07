@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../src/employeResponse.js"></script>
+<link rel="stylesheet" href="../dist/custom/style.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<script>
+$(document).ready(function(){
+    $("#submitButton").click(function(){
+    	var scac= $("#scacReq").val();
+    	var icd= $("#icd").val();
+    	var reason= $("#reason").val();
+    	var empId= $("#empIdReq").val();
+    	var empPin= $("#empPin").val();
+    	var postVar = JSON.stringify({scac:scac,icd:icd,reason:reason,empId:empId,empPin:empPin});
+        $.post("<URL>",postVar);  
+        alert('post'+postVar);
+    }
+    );    
+});
+</script>
+</head>
+<body>
+<!-- <div class="container"> -->
+	<div>
+		<br> <span class="category_title">Verify Employee Info Request 02000 </span> <br> <br>
+	</div>
+	
+	<div id="verify_request_content" class="jumbotron">
+		<div style="width: 27%; float: left; margin-left: 7%;">
+			<b> <span class="line_height">Railroad SCAC  :</span><br> <br>
+				<span class="line_height">ICD Version  :</span><br> <br>
+				<span class="line_height">Reason for Sending  :</span><br> <br>
+				<span class="line_height">Employee Identifier  :</span><br> <br>
+				<span class="line_height">Encrypted Employee Pin  :</span><br> <br>					
+			</b>
+		</div>
+		<div id="employeeInfoSubmit">
+		<input type="text" id="scacReq" size="25" placeholder=""><br> <br>
+		<input type="text" id="icd" size="25"><br> <br>
+		<input type="text" id="reason" size="25"><br> <br>		
+		<input type="text" id="empIdReq" size="25"><br> <br> 
+		<input id="empPin" size="25" type="password"><br> <br>				
+		</div>		
+		<div class="btn-group">
+		<br>
+		<button class="btn btn-default submit_butt" id="submitButton" style="margin-left: 3em"><b>Submit</b></button>
+		</div>
+	</div>		
+<!-- 	</div> -->
+		
+</body>
+</html>
